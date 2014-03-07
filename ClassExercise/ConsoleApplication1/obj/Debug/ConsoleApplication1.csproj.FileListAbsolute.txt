@@ -1,6 +1,5 @@
 F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 F:\Documents\GitHub\OOSE-project\ClassExercise\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
