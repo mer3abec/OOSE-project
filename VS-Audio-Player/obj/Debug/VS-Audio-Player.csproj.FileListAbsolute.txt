@@ -1,0 +1,12 @@
+D:\GitHub\VS-Audio-Player\VS-Audio-Player\VS-Audio-Player\bin\Debug\WindowsFormsApplication1.exe.config
+D:\GitHub\VS-Audio-Player\VS-Audio-Player\VS-Audio-Player\obj\Debug\WindowsFormsApplication1.exe
+D:\GitHub\VS-Audio-Player\VS-Audio-Player\VS-Audio-Player\obj\Debug\WindowsFormsApplication1.pdb
+D:\GitHub\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
+D:\GitHub\VS-Audio-Player\obj\Debug\VSAudioPlayer.PlayerInterface.resources
+D:\GitHub\VS-Audio-Player\obj\Debug\VSAudioPlayer.Properties.Resources.resources
+D:\GitHub\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
+D:\GitHub\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
+D:\GitHub\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe
+D:\GitHub\VS-Audio-Player\bin\Debug\VSAudioPlayer.pdb
+D:\GitHub\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
+D:\GitHub\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
