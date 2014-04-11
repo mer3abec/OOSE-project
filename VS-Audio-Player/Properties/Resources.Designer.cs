@@ -73,9 +73,9 @@ namespace VSAudioPlayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play_icon {
+        internal static System.Drawing.Bitmap pause_icon {
             get {
-                object obj = ResourceManager.GetObject("play_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("pause_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace VSAudioPlayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap prev_icon {
+        internal static System.Drawing.Bitmap play {
             get {
-                object obj = ResourceManager.GetObject("prev_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace VSAudioPlayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stop_icon {
+        internal static System.Drawing.Bitmap player_icon {
             get {
-                object obj = ResourceManager.GetObject("stop_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("player_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,29 @@ namespace VSAudioPlayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vol_icon {
+        internal static System.Drawing.Bitmap prev {
             get {
-                object obj = ResourceManager.GetObject("vol_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("prev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vol {
+            get {
+                object obj = ResourceManager.GetObject("vol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
