@@ -1,0 +1,89 @@
+form1.cs
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace MyMp3Player
+{
+    public partial class Form1 : Form
+    {
+        MusicPlayer player = new MusicPlayer();
+        
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            label1.Text = openFileDialog1.FileName;
+            player.open(openFileDialog1.FileName);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            player.play();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            player.stop();
+        }
+    }
+}
+
+MusikPlayer.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+
+namespace MyMp3Player
+{
+    class MusicPlayer
+    {
+        [DllImport("winmm.dll")]
+        private static extern long mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, int hwndCallback);
+
+        public void open(string file)
+        {
+            string command = "open \"" + file + "\" type MPEGVideo alias MyMp3";
+            mciSendString(command, null, 0, 0);
+        }
+
+        public void play()
+        {
+            string command = "play MyMp3";
+            mciSendString(command, null, 0, 0);
+        }
+
+        public void stop()
+        {
+            string command = "stop MyMp3";
+            mciSendString(command, null, 0, 0);
+
+            command = "close MyMp3";
+            mciSendString(command, null, 0, 0);
+        }
+    
+    
+    
+    
+    }
+}
+
