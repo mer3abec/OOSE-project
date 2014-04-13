@@ -7,29 +7,33 @@ using System.Text;
 
 namespace VSAudioPlayer
 {
-    public delegate void SongFinished();
+
     public class Mp3 : Song
     {
+        public event FirePlayBackChanged firePlayBackChanged;
         public event SongFinished songFinished;// implement even devined in the Song interface
         private string songPath, fileType, genry, singer, fileName, songName;
         private double length; // in seconds
         private NAudio.Wave.BlockAlignReductionStream stream = null;
-        private NAudio.Wave.DirectSoundOut output = null;
+        private NAudio.Wave.WaveOut output = null;
         private NAudio.Wave.VolumeWaveProvider16 volProvider = null;
-        private TimeSpan dur;
+        private TimeSpan time;
         private float vol = 0.5f;//default vol
+        private long position;
+        private long totalLenght;
+
         public Mp3(FileInfo info)
         {
             TagLib.File tagFile = TagLib.File.Create(info.FullName);
             this.genry = tagFile.Tag.FirstGenre;
             this.singer = tagFile.Tag.FirstPerformer;
             this.songName = tagFile.Tag.Title;
-            this.songPath = info.FullName;       
+            this.songPath = info.FullName;
             this.fileName = info.Name;
             this.fileType = info.Extension;
             //Geting duration of the mp3 file with the help of TagLib-sharp 
-            dur = tagFile.Properties.Duration;
-            length = dur.TotalSeconds; Console.WriteLine(this.length + "");  
+            TimeSpan dur = tagFile.Properties.Duration;
+            length = dur.TotalSeconds; 
         }
         //--------------------controls----------------------------------------
         public void play()
@@ -37,17 +41,20 @@ namespace VSAudioPlayer
             try
             {
                 //Call a helper method (look in the botom) to reset the playback
-            
-                    stop();
-                    // open uncompresed strem pcm from mp3 file reader compresed stream.
-                    NAudio.Wave.WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(this.songPath));
-                    stream = new NAudio.Wave.BlockAlignReductionStream(pcm);
-                    volProvider = new VolumeWaveProvider16(stream);
-                    volProvider.Volume = vol;
-                    output = new NAudio.Wave.DirectSoundOut();
-                    output.PlaybackStopped += output_PlaybackStopped;
-                    output.Init(volProvider);
-                    output.Play();           
+
+                stop();
+                // open uncompresed strem pcm from mp3 file reader compresed stream.
+               NAudio.Wave.WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(this.songPath));
+                
+                stream = new NAudio.Wave.BlockAlignReductionStream(pcm);
+
+                volProvider = new VolumeWaveProvider16(stream);
+                volProvider.Volume = vol;
+                output = new NAudio.Wave.WaveOut();//new NAudio.Wave.DirectSoundOut();
+                output.PlaybackStopped += output_PlaybackStopped;
+                output.Init(volProvider);
+                output.Play();
+                checkPlayback();
             }
             catch (Exception e)
             {
@@ -60,9 +67,9 @@ namespace VSAudioPlayer
         {
             if (songFinished != null && output != null)
             {
-                    this.songFinished(); Console.WriteLine("event fired");   //event
+                this.songFinished(); Console.WriteLine("event fired");   //event
             }
-        }      
+        }
         public void stop()
         {
             try
@@ -79,19 +86,20 @@ namespace VSAudioPlayer
                     stream = null;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-                
+
                 stream = null;
             }
         }
         public void pause()
         {
-                output.Pause();
+            output.Pause();
         }
         public void unpause()
         {
             output.Play();
+            checkPlayback();//updates playback values to ui
         }
         //---------------------accessors/mutators------------------------------
         public string SongName
@@ -129,7 +137,7 @@ namespace VSAudioPlayer
             get { return songPath; }
             set { songPath = value; }
         }
-        
+
         public double Length
         {
             get { return length; }
@@ -144,6 +152,36 @@ namespace VSAudioPlayer
                 volProvider.Volume = vol;
             }
         }
+
+        public TimeSpan Time
+        {
+            get { return time; }
+            set { time = value; }
+        }
+        
+
+        public long Position
+        {
+            get { return position; }
+            set
+            { position = value;
+            if (stream != null)
+                {   // 16 bits audio has minimum block size of 2 bytes per chanel. If we seek along , we need to move new position on the begining of that block.
+                    // distance from block boundary (may be 0) (tx to http://stackoverflow.com/questions/20982914/how-do-i-create-a-seekbar-in-c-naudio-music-player)
+                    long adj = this.Position % stream.WaveFormat.BlockAlign; 
+                    // adjust position to boundary and clamp to valid range
+                    long newPos = Math.Max(0, Math.Min(stream.Length, this.Position - adj));
+                    // set playback position
+                    stream.Position = newPos;   
+                } 
+            }
+        }
+
+        public long TotalLenght
+        {
+            get { return totalLenght; }
+            set { totalLenght = value; }
+        }
         //---------------------helpers----------------- implemented interface Song method-----------
         public string playbackState()
         {
@@ -155,6 +193,44 @@ namespace VSAudioPlayer
             {
                 return null;
             }
+        }//----------------------------Melstone 1-----------------------------
+        // Method which starts the event - firePlayBackPositionChanged to use playback value to update slider and info screen.
+        private void checkPlayback()
+        {
+            if (output != null && stream != null)
+            {
+                this.Time = stream.CurrentTime;
+                this.TotalLenght = stream.Length; 
+                System.Threading.Thread t = new System.Threading.Thread(delegate()
+                {
+                    try
+                    {
+                        while (output.PlaybackState == PlaybackState.Playing)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                            TimeSpan newT = stream.CurrentTime;
+
+                            if (this.Time != newT)
+                            {
+                                this.Time = newT;
+                                this.Position = stream.Position;
+                                if (firePlayBackChanged != null)
+                                {
+                                    this.firePlayBackChanged();
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception e)
+                    {
+
+                        Console.WriteLine(e.Message);
+                    }
+                });
+                t.Start();
+            }
+
         }
     }
 }

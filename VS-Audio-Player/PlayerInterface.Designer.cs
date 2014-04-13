@@ -226,6 +226,7 @@
             // 
             this.trackBar1.LargeChange = 1;
             this.trackBar1.Location = new System.Drawing.Point(2, 130);
+            this.trackBar1.Maximum = 1000;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(508, 45);
             this.trackBar1.TabIndex = 100;
@@ -261,6 +262,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PlayerInterface";
             this.Text = "Best Ever Player";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayerInterface_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

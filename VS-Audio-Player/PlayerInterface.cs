@@ -38,10 +38,21 @@ namespace VSAudioPlayer
                 for (int i = 0; i < currentPlayList.getPlayListSize(); i++)
                 {
                     currentPlayList.getElementAt(i).songFinished += PlayerInterface_songFinished;
+                    currentPlayList.getElementAt(i).firePlayBackChanged += PlayerInterface_firePlayBackChanged;
                 }
                 currentPlayList.getCurentSong().play();// start play
                 play.Image = VSAudioPlayer.Properties.Resources.pause_icon;//change icon 
             }
+        }
+
+        void PlayerInterface_firePlayBackChanged()
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getCurentSong().Position / currentPlayList.getCurentSong().TotalLenght);// runs on UI thread
+            });
+           
+
         }
         //Executes when songFinished event occured
         void PlayerInterface_songFinished()
@@ -163,7 +174,8 @@ namespace VSAudioPlayer
         //--------------proggress track scroll event handler---------------------
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-
+            currentPlayList.getCurentSong().Position = (int)(trackBar1.Value * currentPlayList.getCurentSong().TotalLenght / trackBar1.Maximum);
+            Console.WriteLine("siking by mistake");
         }
 
         //-----------------show panel update method------------------------------     
@@ -184,6 +196,19 @@ namespace VSAudioPlayer
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void PlayerInterface_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                currentPlayList.getCurentSong().stop();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
