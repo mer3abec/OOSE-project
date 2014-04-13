@@ -48,3 +48,18 @@ D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\De
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.exe
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.pdb
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.manifest
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.application
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.pdb
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.xml
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.PlayerInterface.resources
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.Properties.Resources.resources
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe.manifest
+C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.application

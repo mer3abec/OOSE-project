@@ -47,6 +47,7 @@ namespace VSAudioPlayer
         void PlayerInterface_songFinished()
         {
             currentPlayList.getNextSong().play();
+            currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
