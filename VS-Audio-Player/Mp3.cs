@@ -149,6 +149,7 @@ namespace VSAudioPlayer
             set
             {
                 vol = value;
+                
                 volProvider.Volume = vol;
             }
         }
@@ -207,7 +208,7 @@ namespace VSAudioPlayer
                     {
                         while (output.PlaybackState == PlaybackState.Playing)
                         {
-                            System.Threading.Thread.Sleep(100);
+                            
                             TimeSpan newT = stream.CurrentTime;
 
                             if (this.Time != newT)
@@ -219,7 +220,7 @@ namespace VSAudioPlayer
                                     this.firePlayBackChanged();
                                 }
                             }
-
+                            System.Threading.Thread.Sleep(100);
                         }
                     }
                     catch (Exception e)

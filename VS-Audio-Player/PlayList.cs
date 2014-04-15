@@ -14,52 +14,56 @@ namespace VSAudioPlayer
 
         private List<int> queue; // keeps indexes of the current playlist, keep order songs to be played.
         private int current = 0; // Current song index in the queue
-        private Song lastPlayedBeforeShufle = null;
-
+        private int index; // Current song index in play list
         public PlayList(FileInfo[] fInfor)
         {
             queue = new List<int>();
             playlist = initSongsList(fInfor);// InitSingsList returns complite playlist built from FileInfo and inits queue.
-
         }
         //Shufels queue 
         public void shufleQueue()
         {
-            lastPlayedBeforeShufle = getCurentSong();
+            //lastPlayedBeforeShufle = getCurentSong();
             Shuffle(queue);
         }
         public void unShufle()
         {
-            lastPlayedBeforeShufle = getCurentSong();
+           // lastPlayedBeforeShufle = getCurentSong();
             queue.Sort();
         }
         public Song getCurentSong()
         {
-            return playlist.ElementAt(queue.ElementAt(current));
+            //return playlist.ElementAt(queue.ElementAt(current));
+            index = queue.ElementAt<int>(current);
+            return playlist.ElementAt(index);
         }
         public Song getNextSong()
         {
-            if (current != queue.Count - 1)
+            if (current < queue.Count )
             {
-                return playlist.ElementAt<Song>(queue.ElementAt<int>(++current));//Getting next Song from palylist by index stored in the current+1.
+                index = queue.ElementAt<int>(++current);
+                return playlist.ElementAt<Song>(index);//Getting next Song from palylist by index stored in the current+1.
             }   // ...if current not equal to the last index.
             else// ... else return first Song with index 0.
             {
                 current = 0;
-                return playlist.ElementAt(queue.ElementAt(current));
+                index = queue.ElementAt<int>(current);
+                return playlist.ElementAt(index);
             }
 
         }
         public Song getPrevSong()
         {
-            if (current != 0)
+            if (current > 0)
             {
-                return playlist.ElementAt(queue.ElementAt(--current));//Getting previous Song from palylist by index stored current-1.
+                index = queue.ElementAt<int>(--current);
+                return playlist.ElementAt<Song>(index);//Getting previous Song from palylist by index stored current-1.
             }   // ...if current not equal to 0.
             else// ... else return last Song with index queue.Count-1.
             {
                 current = queue.Count - 1;
-                return playlist.ElementAt(queue.ElementAt(current));
+                index = queue.ElementAt<int>(current);
+                return playlist.ElementAt(index);
             }
 
         }
@@ -105,13 +109,11 @@ namespace VSAudioPlayer
             get { return current; }
             set { current = value; }
         }
-
-        public Song LastPlayed
+        public int Index
         {
-            get { return lastPlayedBeforeShufle; }
-            set { lastPlayedBeforeShufle = value; }
+            get { return index; }
+            set { index = value; }
         }
-        
     }
    
 }

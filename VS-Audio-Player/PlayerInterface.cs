@@ -49,7 +49,8 @@ namespace VSAudioPlayer
         {
             this.Invoke((MethodInvoker)delegate
             {
-                trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getCurentSong().Position / currentPlayList.getCurentSong().TotalLenght);// runs on UI thread
+                //trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getCurentSong().Position / currentPlayList.getCurentSong().TotalLenght);// runs on UI thread
+                trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getElementAt(currentPlayList.Index).Position / currentPlayList.getElementAt(currentPlayList.Index).TotalLenght);
             });
            
 
@@ -93,13 +94,8 @@ namespace VSAudioPlayer
         {
             if (currentPlayList != null)
             {   // After shufle was trigered, songs queue has been changed. Need to remember last song played and stop it before next
-                // ...taken from new queue will paly.
-                if (currentPlayList.LastPlayed != null)
-                {
-                    currentPlayList.LastPlayed.stop();
-                }
-                else { currentPlayList.getCurentSong().stop(); }
-                currentPlayList.getCurentSong().stop();
+                // ...taken from new queue will paly.         
+                currentPlayList.getElementAt(currentPlayList.Index).stop();
                 currentPlayList.getPrevSong().play();
                 currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
                 Console.WriteLine(currentPlayList.getCurentSong().FileName);
@@ -112,6 +108,7 @@ namespace VSAudioPlayer
             {
                 currentPlayList.getCurentSong().stop();
                 play.Image = VSAudioPlayer.Properties.Resources.play;
+                trackBar1.Value = 1;
             }   
             
         }
@@ -147,17 +144,10 @@ namespace VSAudioPlayer
         {
             if (currentPlayList != null)
             {   // After shufle was trigered, songs queue has been changed. Need to remember last song played and stop it before next
-                // ...taken from new queue will paly.
-                if (currentPlayList.LastPlayed != null)
-                {
-                    currentPlayList.LastPlayed.stop();
-                }
-                else
-                { 
-                    currentPlayList.getCurentSong().stop(); 
-                }
-                currentPlayList.getCurentSong().stop();
+                // ...taken from new queue will paly.             
+                currentPlayList.getElementAt(currentPlayList.Index).stop();
                 currentPlayList.getNextSong().play();
+                Console.WriteLine("In the next befor stting vol");
                 currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
                 Console.WriteLine(currentPlayList.getCurentSong().FileName);
             }
