@@ -35,6 +35,7 @@ namespace VSAudioPlayer
             TimeSpan dur = tagFile.Properties.Duration;
             length = dur.TotalSeconds; 
         }
+        
         //--------------------controls----------------------------------------
         public void play()
         {
@@ -62,7 +63,7 @@ namespace VSAudioPlayer
                 Console.WriteLine(e.Message);
             }
         }
-        // Fires event when playback stopped. Litener is in PlayerInerface
+        // Fires event when playback stopped. Listener is in PlayerInerface
         void output_PlaybackStopped(object sender, StoppedEventArgs e)
         {
             if (songFinished != null && output != null)
@@ -154,7 +155,7 @@ namespace VSAudioPlayer
                 {
                     volProvider.Volume = vol;
                 }
-                catch (Exception e)
+                catch (Exception )
                 {
                     stop();// if exception
                     songFinished();// then fire even.
@@ -203,8 +204,8 @@ namespace VSAudioPlayer
             {
                 return null;
             }
-        }//----------------------------Melstone 1-----------------------------
-        // Method which starts the event - firePlayBackPositionChanged to use playback value to update slider and info screen.
+        }//----------------------------Method which runs in separeted thread to check changing playback state and sends events to interface-----------------------------
+        // Method which starts the event - firePlayBackPositionChanged to use playback values to update slider and info screen.
         private void checkPlayback()
         {
             if (output != null && stream != null)
@@ -229,7 +230,7 @@ namespace VSAudioPlayer
                                     this.firePlayBackChanged();
                                 }
                             }
-                            System.Threading.Thread.Sleep(100);
+                            System.Threading.Thread.Sleep(50);
                         }
                     }
                     catch (Exception e)

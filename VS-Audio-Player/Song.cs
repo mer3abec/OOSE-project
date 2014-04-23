@@ -28,6 +28,10 @@ namespace VSAudioPlayer
         void pause();
         void unpause();
         string playbackState();
+       
+        
+            
+        
       
     }
 }

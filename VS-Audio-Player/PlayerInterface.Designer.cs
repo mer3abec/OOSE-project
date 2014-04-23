@@ -48,10 +48,8 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.waveformPainter1 = new NAudio.Gui.WaveformPainter();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.showPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -65,7 +63,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(510, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(512, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,7 +104,7 @@
             this.groupBox1.Controls.Add(this.showPanel);
             this.groupBox1.Location = new System.Drawing.Point(2, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(508, 100);
+            this.groupBox1.Size = new System.Drawing.Size(508, 72);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Media Info: ";
@@ -114,12 +112,11 @@
             // showPanel
             // 
             this.showPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.showPanel.Controls.Add(this.waveformPainter1);
             this.showPanel.Font = new System.Drawing.Font("Calibri", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showPanel.ForeColor = System.Drawing.SystemColors.MenuText;
             this.showPanel.Location = new System.Drawing.Point(11, 20);
             this.showPanel.Name = "showPanel";
-            this.showPanel.Size = new System.Drawing.Size(489, 74);
+            this.showPanel.Size = new System.Drawing.Size(489, 32);
             this.showPanel.TabIndex = 0;
             this.showPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.showPanel_Paint);
             // 
@@ -135,7 +132,7 @@
             this.groupBox2.Controls.Add(this.previous);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(502, 69);
+            this.groupBox2.Size = new System.Drawing.Size(502, 61);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Controls: ";
@@ -228,7 +225,7 @@
             // trackBar1
             // 
             this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(2, 130);
+            this.trackBar1.Location = new System.Drawing.Point(2, 105);
             this.trackBar1.Maximum = 1000;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(508, 45);
@@ -239,33 +236,25 @@
             // 
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Location = new System.Drawing.Point(2, 182);
+            this.panel1.Location = new System.Drawing.Point(2, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(508, 104);
+            this.panel1.Size = new System.Drawing.Size(508, 91);
             this.panel1.TabIndex = 101;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 79);
+            this.comboBox1.Location = new System.Drawing.Point(3, 62);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(495, 21);
+            this.comboBox1.Size = new System.Drawing.Size(502, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // waveformPainter1
-            // 
-            this.waveformPainter1.Location = new System.Drawing.Point(4, 4);
-            this.waveformPainter1.Name = "waveformPainter1";
-            this.waveformPainter1.Size = new System.Drawing.Size(481, 53);
-            this.waveformPainter1.TabIndex = 0;
-            this.waveformPainter1.Text = "waveformPainter1";
             // 
             // PlayerInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 286);
+            this.ClientSize = new System.Drawing.Size(512, 239);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.groupBox1);
@@ -278,7 +267,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.showPanel.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -311,7 +299,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private NAudio.Gui.WaveformPainter waveformPainter1;
     }
 }
 

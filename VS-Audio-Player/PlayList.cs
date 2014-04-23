@@ -118,6 +118,16 @@ namespace VSAudioPlayer
             get { return playlist; }
             set { playlist = value; }
         }
+        // calculate and gives next song index
+        public int getNextIndexInQuaue(){
+            int next = current + 1;
+            if (next == queue.Count){
+
+                return queue.ElementAt(0);
+            } else {
+                return queue.ElementAt(next); 
+            }
+        }
     }
    
 }

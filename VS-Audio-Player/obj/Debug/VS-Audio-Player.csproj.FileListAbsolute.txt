@@ -40,37 +40,13 @@ D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\bin\De
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\bin\Debug\taglib-sharp.dll
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\bin\Debug\NAudio.xml
 D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\bin\Debug\policy.2.0.taglib-sharp.config
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.PlayerInterface.resources
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.Properties.Resources.resources
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.exe.manifest
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.application
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.exe
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VSAudioPlayer.pdb
-D:\Documents\Documents\Visual Studio 2013\Projects\VS-Audio-Player - Copy\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.manifest
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.application
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.pdb
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.dll
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.WindowsMediaFormat.dll
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.dll
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\taglib-sharp.dll
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.xml
-D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.config
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.PlayerInterface.resources
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.Properties.Resources.resources
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe.manifest
-D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.application
-C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
-C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
-C:\Users\maxinc stationær\Documents\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
+D:\Docu
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\Interop.WMPLib.dll
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\AxInterop.WMPLib.dll
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.ResolveComReference.cache
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.manifest
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\VSAudioPlayer.application
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe
@@ -81,11 +57,35 @@ D:\Documents\Desktop\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.dll
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\taglib-sharp.dll
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\NAudio.xml
 D:\Documents\Desktop\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.config
+D:\Documents\Desktop\VS-Audio-Player\bin\Debug\Interop.WMPLib.dll
+D:\Documents\Desktop\VS-Audio-Player\bin\Debug\AxInterop.WMPLib.dll
+D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
 D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.PlayerInterface.resources
 D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.Properties.Resources.resources
 D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
 D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe.manifest
 D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.application
-D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
-D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
-D:\Documents\Desktop\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.config
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe.manifest
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.application
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.exe
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\VSAudioPlayer.pdb
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.WindowsMediaFormat.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\taglib-sharp.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\NAudio.xml
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\policy.2.0.taglib-sharp.config
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\Interop.WMPLib.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\bin\Debug\AxInterop.WMPLib.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csprojResolveAssemblyReference.cache
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\Interop.WMPLib.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\AxInterop.WMPLib.dll
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.ResolveComReference.cache
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.PlayerInterface.resources
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.Properties.Resources.resources
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VS-Audio-Player.csproj.GenerateResource.Cache
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe.manifest
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.application
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.exe
+D:\GitHub\OOSE-project\VS-Audio-Player\obj\Debug\VSAudioPlayer.pdb
