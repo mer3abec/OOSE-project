@@ -11,6 +11,7 @@ namespace VSAudioPlayer
     {
 
         private List<Song> playlist;
+
         private List<int> queue; // keeps indexes of the current playlist, keep order songs to be played.
         private int current = 0; // Current song index in the queue
         private int index; // Current song index in play list
@@ -33,12 +34,12 @@ namespace VSAudioPlayer
         public Song getCurentSong()
         {
             //return playlist.ElementAt(queue.ElementAt(current));
-            //index = queue.ElementAt<int>(current);
+            index = queue.ElementAt<int>(current);
             return playlist.ElementAt(index);
         }
         public Song getNextSong()
         {
-            if (current != queue.Count-1 )
+            if (current < queue.Count )
             {
                 index = queue.ElementAt<int>(++current);
                 return playlist.ElementAt<Song>(index);//Getting next Song from palylist by index stored in the current+1.
@@ -53,7 +54,7 @@ namespace VSAudioPlayer
         }
         public Song getPrevSong()
         {
-            if (current != 0)
+            if (current > 0)
             {
                 index = queue.ElementAt<int>(--current);
                 return playlist.ElementAt<Song>(index);//Getting previous Song from palylist by index stored current-1.
@@ -112,11 +113,6 @@ namespace VSAudioPlayer
         {
             get { return index; }
             set { index = value; }
-        }
-        public List<Song> Playlist
-        {
-            get { return playlist; }
-            set { playlist = value; }
         }
     }
    

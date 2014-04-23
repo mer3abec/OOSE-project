@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VSAudioPlayer.exe" size="199680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VSAudioPlayer.exe" size="199168">
       <assemblyIdentity name="VSAudioPlayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eHwLpHKLi/6B2x/uvbWBNNNjOCyDVD2K4VXlu0jKuO8=</dsig:DigestValue>
+        <dsig:DigestValue>beT2gQo6SFoQYlTnGb/KGQPILp8ABkELKNVUUGmv5YY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

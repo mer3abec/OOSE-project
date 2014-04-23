@@ -149,17 +149,8 @@ namespace VSAudioPlayer
             set
             {
                 vol = value;
-
-                try
-                {
-                    volProvider.Volume = vol;
-                }
-                catch (Exception e)
-                {
-                    stop();// if exception
-                    songFinished();// then fire even.
-                   
-                }
+                
+                volProvider.Volume = vol;
             }
         }
 

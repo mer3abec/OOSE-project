@@ -42,7 +42,6 @@ namespace VSAudioPlayer
                 }
                 currentPlayList.getCurentSong().play();// start play
                 play.Image = VSAudioPlayer.Properties.Resources.pause_icon;//change icon 
-                initCombobox(); // Initialise combobox with playlist data.
             }
         }
 
@@ -52,7 +51,6 @@ namespace VSAudioPlayer
             {
                 //trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getCurentSong().Position / currentPlayList.getCurentSong().TotalLenght);// runs on UI thread
                 trackBar1.Value = (int)(trackBar1.Maximum * currentPlayList.getElementAt(currentPlayList.Index).Position / currentPlayList.getElementAt(currentPlayList.Index).TotalLenght);
-                
             });
            
 
@@ -62,7 +60,6 @@ namespace VSAudioPlayer
         {
             currentPlayList.getNextSong().play();
             currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
-            comboBox1.SelectedIndex = currentPlayList.Index;
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -101,7 +98,7 @@ namespace VSAudioPlayer
                 currentPlayList.getElementAt(currentPlayList.Index).stop();
                 currentPlayList.getPrevSong().play();
                 currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
-                comboBox1.SelectedIndex = currentPlayList.Index;
+                Console.WriteLine(currentPlayList.getCurentSong().FileName);
             }
         }
 
@@ -142,16 +139,17 @@ namespace VSAudioPlayer
             }
             
         }
-        // next button
+
         private void next_Click(object sender, EventArgs e)
         {
             if (currentPlayList != null)
             {   // After shufle was trigered, songs queue has been changed. Need to remember last song played and stop it before next
                 // ...taken from new queue will paly.             
                 currentPlayList.getElementAt(currentPlayList.Index).stop();
-                currentPlayList.getNextSong().play();               
+                currentPlayList.getNextSong().play();
+                Console.WriteLine("In the next befor stting vol");
                 currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
-                comboBox1.SelectedIndex = currentPlayList.Index; // updates combobox selected index state
+                Console.WriteLine(currentPlayList.getCurentSong().FileName);
             }
         }
         //--------------volum scroll event handler---------------------
@@ -166,8 +164,8 @@ namespace VSAudioPlayer
         //--------------proggress track scroll event handler---------------------
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            currentPlayList.getElementAt(currentPlayList.Index).Position = (int)(trackBar1.Value * currentPlayList.getElementAt(currentPlayList.Index).TotalLenght / trackBar1.Maximum);
-           
+            currentPlayList.getCurentSong().Position = (int)(trackBar1.Value * currentPlayList.getCurentSong().TotalLenght / trackBar1.Maximum);
+            Console.WriteLine("siking by mistake");
         }
 
         //-----------------show panel update method------------------------------     
@@ -201,21 +199,6 @@ namespace VSAudioPlayer
 
                 Console.WriteLine(ex.Message);
             }
-        }
-        //Called when Combobox item selected
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = comboBox1.SelectedIndex;
-            currentPlayList.getElementAt(currentPlayList.Index).stop(); //get current song playing and stop it
-            currentPlayList.Index = index;
-            currentPlayList.getCurentSong().play();// Starts selected
-            currentPlayList.getCurentSong().Vol = trackBar2.Value * 0.01f;//setting up vol
-        }
-        // Loads playlist into combobox element
-        private void initCombobox()
-        {
-            comboBox1.DataSource = currentPlayList.Playlist;
-            comboBox1.DisplayMember = "fileName";
         }
     }
 }
