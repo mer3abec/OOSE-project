@@ -37,6 +37,9 @@ namespace VSAudioPlayer
         }
         
         //--------------------controls----------------------------------------
+        /// <summary>
+        /// Starts to play a file
+        /// </summary>
         public void play()
         {
             try
@@ -63,7 +66,11 @@ namespace VSAudioPlayer
                 Console.WriteLine(e.Message);
             }
         }
-        // Fires event when playback stopped. Listener is in PlayerInerface
+        /// <summary>
+        /// Fires event when playback stopped. Listener is in PlayerInerface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void output_PlaybackStopped(object sender, StoppedEventArgs e)
         {
             if (songFinished != null && output != null)
@@ -71,6 +78,9 @@ namespace VSAudioPlayer
                 this.songFinished(); Console.WriteLine("event fired");   //event
             }
         }
+        /// <summary>
+        /// Stops play back and relise all resorces.
+        /// </summary>
         public void stop()
         {
             try
@@ -93,10 +103,16 @@ namespace VSAudioPlayer
                 stream = null;
             }
         }
+        /// <summary>
+        /// Sets on pause
+        /// </summary>
         public void pause()
         {
             output.Pause();
         }
+        /// <summary>
+        /// Continue play.
+        /// </summary>
         public void unpause()
         {
             output.Play();
@@ -158,7 +174,7 @@ namespace VSAudioPlayer
                 catch (Exception )
                 {
                     stop();// if exception
-                    songFinished();// then fire even.
+                    songFinished();// then fire even to start a new song.
                    
                 }
             }
@@ -170,7 +186,6 @@ namespace VSAudioPlayer
             set { time = value; }
         }
         
-
         public long Position
         {
             get { return position; }
@@ -194,6 +209,10 @@ namespace VSAudioPlayer
             set { totalLenght = value; }
         }
         //---------------------helpers----------------- implemented interface Song method-----------
+        /// <summary>
+        /// Checks play back state
+        /// </summary>
+        /// <returns>"Playing, Stoped or Paused"</returns>
         public string playbackState()
         {
             if (output != null)
@@ -204,7 +223,8 @@ namespace VSAudioPlayer
             {
                 return null;
             }
-        }//----------------------------Method which runs in separeted thread to check changing playback state and sends events to interface-----------------------------
+        }
+        //----------------------------Method which runs in separeted thread to check changing playback state and sends events to interface-----------------------------
         // Method which starts the event - firePlayBackPositionChanged to use playback values to update slider and info screen.
         private void checkPlayback()
         {

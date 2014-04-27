@@ -180,7 +180,7 @@
             this.repeat.TabIndex = 5;
             this.repeat.Text = "Rep.";
             this.repeat.UseVisualStyleBackColor = true;
-            this.repeat.CheckedChanged += new System.EventHandler(this.repeat_CheckedChanged);
+            
             // 
             // next
             // 

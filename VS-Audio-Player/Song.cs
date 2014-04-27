@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace VSAudioPlayer
 {
+    /// <summary>
+    /// Event handler deligate method FirePlayBackChanged() signature
+    /// </summary>
     public delegate void FirePlayBackChanged();
+    /// <summary>
+    /// Event handler deligate method SongFinished() signature
+    /// </summary>
     public delegate void SongFinished();
+
+    /// <summary>
+    /// Song common interface. Can be implemented by other classes designed to support different formats.
+    /// </summary>
     public interface Song
     {
         event FirePlayBackChanged firePlayBackChanged;
@@ -27,11 +37,6 @@ namespace VSAudioPlayer
         void stop();
         void pause();
         void unpause();
-        string playbackState();
-       
-        
-            
-        
-      
+        string playbackState();                                     
     }
 }

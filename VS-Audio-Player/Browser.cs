@@ -9,9 +9,16 @@ using System.Windows.Forms;
 
 namespace VSAudioPlayer
 {
+    /// <summary>
+    /// Helper Class
+    /// </summary>
     public class Browser
     {
-
+        /// <summary>
+        /// Checks wether user already selected sufle option and builds playlist from folder selected.
+        /// </summary>
+        /// <param name="shufled"></param>
+        /// <returns>PlayList</returns>
         public static PlayList BuildPlayList(bool shufled)
         {
             PlayList list = null;
@@ -25,11 +32,15 @@ namespace VSAudioPlayer
                 FileInfo[] fInfor = dInfo.GetFiles("*.mp3");               
                 list = new PlayList(fInfor);
                 if (list.getPlayListSize() == 0) return null; 
-                if (shufled) list.shufleQueue();
-                
+                if (shufled) list.shufleQueue();           
             }
             return list;
         }
+        /// <summary>
+        /// Returns playList builded from selected files.
+        /// </summary>
+        /// <param name="shufled"></param>
+        /// <returns>PlayList</returns>
         public static PlayList BuildPlayListFromFiles(bool shufled)
         {
 
